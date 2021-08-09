@@ -1,0 +1,19 @@
+version: "3"
+services:
+  3m:
+    image: docker.io/whateverany/3m:0.0.1
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
+      - ${_DOCKER_HOME:-.docker}:/root/.docker
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - ${ENVFILE:-.env}
+  node:
+    image: docker.io/whateverany/node-whateverany:0.0.1
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
+    env_file:
+      - ${ENVFILE:-.env}
+
