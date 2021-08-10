@@ -6,8 +6,8 @@ WORKDIR /opt/matrix-appservice-minecraft
 RUN set -x ;\
   echo "INFO: begin RUN1" ;\
   if [ \! -e ./src/matrix-appservice-minecraft ] ; then \
-    echo "INFO: ./src/matrix-appservice-minecraft does not exist, pulling" \
-    git clone https://github.com/dylhack/matrix-appservice-minecraft src/matrix-appservice-minecraft \
+    echo "INFO: ./src/matrix-appservice-minecraft does not exist, pulling" ;\
+    git clone https://github.com/dylhack/matrix-appservice-minecraft src/matrix-appservice-minecraft ;\
   fi ;\
   echo "INFO: end RUN1"
 
