@@ -1,3 +1,4 @@
+
 DOCKER_COMPOSE_RUN := docker-compose run --rm
 BUILD_VERSION := 0.0.1
 ENVFILE := .env
@@ -8,7 +9,7 @@ build: _env
 
 _build:
 	/usr/bin/docker build \
-	  -t docker.io/whateverany/node-whateverany:$(BUILD_VERSION) \
+	  -t docker.io/whateverany/matrix-mc:$(BUILD_VERSION) \
 	  -f src/Dockerfile  \
 	  .
 .PHONY: _build

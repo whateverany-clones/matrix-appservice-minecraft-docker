@@ -22,3 +22,11 @@ services:
     env_file:
       - ${ENVFILE:-.env}
 
+  test:
+    image: docker.io/whateverany/matrix-mc:0.0.1
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
+    env_file:
+      - ${ENVFILE:-.env}
+
