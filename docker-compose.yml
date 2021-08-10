@@ -9,6 +9,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     env_file:
       - ${ENVFILE:-.env}
+  3m_init:
+    image: docker.io/whateverany/3m:0.0.1
+    working_dir: /opt/app
+    volumes:
+      - .:/opt/app
   node:
     image: docker.io/whateverany/node-whateverany:0.0.1
     working_dir: /opt/app
