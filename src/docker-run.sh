@@ -2,6 +2,11 @@
 
 args="$@"
 
+if [ ! -f "/data/config/config.yaml" ]; then
+        echo 'No registration found, generating now'
+        args="--INIT"
+fi
+
 # if no --uid is supplied, prepare files to drop privileges
 if [ "$(id -u)" = 0 ]; then
 	chown node:node /data
@@ -21,5 +26,5 @@ else
 fi
 
 # $su_exec is used in case we have to drop the privileges
-exec $su_exec /usr/local/bin/node '/opt/matrix-appservice-minecraft/build/index.js' \
+exec $su_exec /usr/local/bin/node '/opt/matrix-appservice-minecraft/dist/src/app.js' \
      $args
