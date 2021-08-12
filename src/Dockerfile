@@ -10,8 +10,6 @@ WORKDIR /opt/matrix-appservice-minecraft
 
 COPY ./src/docker-run.sh .
 
-WORKDIR /data
-
 RUN set -x ;\
   echo "INFO: begin RUN2" ;\
   chown node:node /opt/matrix-appservice-minecraft ;\
@@ -21,6 +19,7 @@ RUN set -x ;\
 
 VOLUME /data
 
+WORKDIR /data
 
 ENTRYPOINT ["/opt/matrix-appservice-minecraft/docker-run.sh"]
 

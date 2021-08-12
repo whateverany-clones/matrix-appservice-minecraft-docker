@@ -23,11 +23,9 @@ services:
       - ${ENVFILE:-.env}
   test:
     image: docker.io/whateverany/matrix-mc:${BUILD_VERSION:-0.0.0}
-    working_dir: /opt/app
+     #working_dir: /opt/app
     volumes:
-      - .:/opt/app
+      - ${HOME}/test/data:/data
     env_file:
       - ${ENVFILE:-.env}
-    volumes:
-      - ./data:/data
 
